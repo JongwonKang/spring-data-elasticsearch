@@ -1,0 +1,30 @@
+POST http://localhost:8080/product
+Content-Type: application/json
+
+{
+  "name": "상품 등록 테스트",
+  "price" : 10000,
+  "categoryIdx" : 1,
+  "accountIdx": 147,
+  "description" : "상품 옷 등록 테스트 입니다."
+}
+
+###
+POST http://localhost:8080/product/document
+Content-Type: application/json
+
+{
+}
+###
+
+GET http://localhost:8080/product?name=상품&page=0
+Content-Type: application/json
+
+{
+  "name" : "상품"
+}
+
+
+###
+
+GET http://localhost:9200/product/_doc
