@@ -1,5 +1,6 @@
 package com.example.elastic.product.controller;
 
+import com.example.elastic.product.param.ProductListParam;
 import com.example.elastic.product.param.ProductParam;
 import com.example.elastic.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class ProductController {
         return ResponseEntity.ok().build();
     }
 
-    @PostMapping("document")
+    @PostMapping("/document")
     public ResponseEntity createProductDocument(){
         productService.createProductDocument();
         return ResponseEntity.ok().build();
@@ -28,5 +29,10 @@ public class ProductController {
     @GetMapping
     public ResponseEntity getProduct(@RequestParam String name, Pageable pageable){
         return ResponseEntity.ok(productService.findByName(name, pageable));
+    }
+
+    @GetMapping("/list")
+    public ResponseEntity getProductList(@RequestParam ProductListParam searchCondition, Pageable pageable){
+        return ResponseEntity.ok(productService.getProductList(searchCondition, pageable));
     }
 }
