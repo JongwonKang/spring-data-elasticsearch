@@ -42,6 +42,7 @@ public class ProductDocument {
                 .name(product.getName())
                 .categoryIdx(product.getCategoryIdx())
                 .accountIdx(product.getAccountIdx())
+                .description(product.getDescription())
                 .price(product.getPrice())
                 .createDate(product.getStartDate())
                 .updateDate(product.getEndDate())
