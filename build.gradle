@@ -24,6 +24,14 @@ dependencies {
 	implementation 'org.springframework.data:spring-data-elasticsearch'
 	implementation group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
 	compileOnly 'org.projectlombok:lombok'
+	implementation group: 'com.amazonaws', name: 'aws-java-sdk-elasticsearch', version: '1.11.346'
+	implementation platform('software.amazon.awssdk:bom:2.17.165')
+	implementation 'software.amazon.awssdk:bom:2.17.256'
+	implementation 'software.amazon.awssdk:s3:2.17.165'
+
+	//implementation 'software.amazon.awssdk:auth'
+	//implementation 'software.amazon.awssdk:apache-client'
+
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
